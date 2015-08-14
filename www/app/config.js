@@ -8,7 +8,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 
         .state('companies', {
             url: appUrlMap.companies,
-            templateUrl: 'views/companies.html'
+            templateUrl: 'app/views/companies.html'
         });
 
     // if none of the above states are matched, use this as the fallback
