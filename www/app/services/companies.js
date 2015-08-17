@@ -1,10 +1,5 @@
-app.service('CompaniesSrv', ['$http', function ($http) {
-    getCompanies = function () {
-        $http.get(beUrlMap.baseLocal + beUrlMap.companies)
-            .then(function (response) {
-                return response.data;
-            }, function () {
-                return false;
-            });
+app.service('CompaniesSrv', ['CompaniesRes', function (CompaniesRes) {
+    var getCompanies = function () {
+        return CompaniesRes.query();
     };
 }]);
