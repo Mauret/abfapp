@@ -1,4 +1,7 @@
-app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+app.config(function ($stateProvider, $urlRouterProvider, SpringDataRestInterceptorProvider) {
+
+    // Configure rest
+    SpringDataRestInterceptorProvider.apply();
 
     // Ionic uses AngularUI Router which uses the concept of states
     // Learn more here: https://github.com/angular-ui/ui-router
@@ -16,4 +19,4 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     $urlRouterProvider.otherwise(appUrlMap.home)
 
 
-}]);
+});
