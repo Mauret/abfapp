@@ -1,5 +1,9 @@
-angular.module('abfapp.controllers')
-
-    .controller('CompaniesCtrl', ['$scope', 'CompaniesSrv', function ($scope, CompaniesSrv) {
-        $scope.companies = CompaniesSrv.getCompanies();
-    }]);
+app.controller('CompaniesCtrl', function ($scope, CompaniesSrv, SpringDataRestAdapter) {
+    /**
+     * Get all companies,
+     */
+    var res = CompaniesSrv.getCompanies();
+    SpringDataRestAdapter.process(res).then(function (processedRes) {
+        $scope.companies = processedRes._embeddedItems;
+    });
+});

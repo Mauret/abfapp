@@ -1,20 +1,11 @@
-<ion-view title="Aziende">
-    <ion-content padding="true" class="has-header">
+<ion-view title="Aziende" ng-controller="CompaniesCtrl">
+    <ion-content class="has-header">
         <ion-list>
-            <ion-item class="item-thumbnail-left">
-                <img src="/img/avatar-img.png">
-                <h2>company name</h2>
-                <p>company desc</p>
-            </ion-item>
-            <ion-item class="item-thumbnail-left">
-                <img src="/img/avatar-img.png">
-                <h2>company name</h2>
-                <p>company desc</p>
-            </ion-item>
-            <ion-item class="item-thumbnail-left">
-                <img src="/img/avatar-img.png">
-                <h2>company name</h2>
-                <p>company desc</p>
+            <ion-item class="item-thumbnail-left" collection-repeat="company in companies">
+                <img src="../img/ionic.png">
+                <h2>{{company.name}}</h2>
+                <p>{{company.city}}</p>
+                <p>{{company.address}}</p>
             </ion-item>
         </ion-list>
     </ion-content>

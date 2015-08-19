@@ -1,12 +1,9 @@
-angular.module('abfapp.services')
-
-    .service('CompaniesSrv', ['$http', function ($http) {
-        getCompanies = function() {
-            $http.get(beUrlMap.baseLocal + beUrlMap.companies)
-                .then(function(response) {
-                    return response.data;
-                }, function() {
-                    return false;
-                });
-        };
-    }]);
+app.service('CompaniesSrv', function ($http) {
+    this.getCompanies = function() {
+        return $http.get(beUrlMap.baseLocal + beUrlMap.companies).then(function(data) {
+            return data;
+        }, function() {
+            return false;
+        });
+    }
+});
