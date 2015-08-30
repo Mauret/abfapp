@@ -1,0 +1,15 @@
+<ion-view title="{{company.name}}" ng-controller="CompanyCtrl">
+    <ion-content class="has-header">
+        <img src="../img/ionic.png">
+        <ion-list>
+            <ion-item>Indirizzo: {{company.address}} {{company.zipcode}} {{company.city}}</ion-item>
+
+            <ion-item ng-if="company.phone">Telefono: {{company.phone}}</ion-item>
+
+            <ion-item ng-if="company.email">E-mail: {{company.email}}</ion-item>
+        </ion-list>
+        <a href="#/{{company.getLink('menu')}}"
+           class="button button-stable button-block  icon ion-android-book button-full">Menu</a>
+        <p>{{company.description}}</p>
+    </ion-content>
+</ion-view>

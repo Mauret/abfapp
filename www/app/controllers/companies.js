@@ -1,6 +1,6 @@
 app.controller('CompaniesCtrl', function ($scope, CompaniesSrv, SpringDataRestAdapter) {
     /**
-     * Get all companies,
+     * Get all companies.
      */
     var res = CompaniesSrv.getCompanies();
     SpringDataRestAdapter.process(res).then(function (processedRes) {

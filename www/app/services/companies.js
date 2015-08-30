@@ -6,4 +6,12 @@ app.service('CompaniesSrv', function ($http) {
             return false;
         });
     }
+
+    this.getCompany = function(urlCompany) {
+        return $http.get(urlCompany).then(function(data) {
+            return data;
+        }, function() {
+            return false;
+        });
+    }
 });
