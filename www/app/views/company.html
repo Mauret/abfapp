@@ -1,5 +1,6 @@
-<ion-view title="{{company.name}}" ng-controller="CompanyCtrl">
-    <ion-content class="has-header">
+<ion-view>
+    <ion-nav-title>{{company.name}}</ion-nav-title>
+    <ion-content>
         <img src="../img/ionic.png">
         <ion-list>
             <ion-item>Indirizzo: {{company.address}} {{company.zipcode}} {{company.city}}</ion-item>
@@ -8,8 +9,8 @@
 
             <ion-item ng-if="company.email">E-mail: {{company.email}}</ion-item>
         </ion-list>
-        <a href="#/{{company.getLink('menu')}}"
-           class="button button-stable button-block  icon ion-android-book button-full">Menu</a>
+        <button ui-sref="company({restCompany: company._links.self.href})"
+           class="button button-full button-stable ion-ios-book">Menu</button>
         <p>{{company.description}}</p>
     </ion-content>
 </ion-view>

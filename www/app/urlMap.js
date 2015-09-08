@@ -1,11 +1,12 @@
 var appUrlMap = {
     home: '/companies',
     companies: '/companies',
-    company: '/companies/:urlCompany'
+    company: '/company/:restCompany',
+    menu: '/menu/:restMenu'
 };
 
 var beUrlMap = {
     baseLocal: 'http://localhost:8081',
     baseRemote: '',
-    companies: '/companies?size=1000', //1000 is the max value available
+    companies: '/companies?size=1000' //1000 is the max value available
 };

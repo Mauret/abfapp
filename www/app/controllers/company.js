@@ -1,8 +1,8 @@
-app.controller('CompanyCtrl', function ($scope, company, SpringDataRestAdapter) {
+app.controller('CompanyCtrl', function ($scope, $stateParams, CompaniesSrv, SpringDataRestAdapter) {
     /**
      * Get a company.
      */
-    SpringDataRestAdapter.process(company).then(function (processedRes) {
-        $scope.company = processedRes._embeddedItems;
+    SpringDataRestAdapter.process(CompaniesSrv.getCompany($stateParams.restCompany)).then(function (processedRes) {
+        $scope.company = processedRes;
     });
 });

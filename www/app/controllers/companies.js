@@ -2,8 +2,7 @@ app.controller('CompaniesCtrl', function ($scope, CompaniesSrv, SpringDataRestAd
     /**
      * Get all companies.
      */
-    var res = CompaniesSrv.getCompanies();
-    SpringDataRestAdapter.process(res).then(function (processedRes) {
+    SpringDataRestAdapter.process(CompaniesSrv.getCompanies()).then(function (processedRes) {
         $scope.companies = processedRes._embeddedItems;
     });
 });

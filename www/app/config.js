@@ -11,23 +11,22 @@ app.config(function ($stateProvider, $urlRouterProvider, SpringDataRestIntercept
 
         .state('companies', {
             url: appUrlMap.companies,
+            controller: 'CompaniesCtrl',
             templateUrl: 'app/views/companies.html'
         })
 
         .state('company', {
             url: appUrlMap.company,
-            templateUrl: 'app/views/company.html',
             controller: 'CompanyCtrl',
-            resolve: {
-                company: function ($stateParams, CompaniesSrv) {
-                    return CompaniesSrv.getCompany($stateParams.urlCompany)
-                }
-            }
+            templateUrl: 'app/views/company.html'
+        })
+
+        .state('menu', {
+            url: appUrlMap.menu,
+            controller: 'MenuCtrl',
+            templateUrl: 'app/views/menu.html'
         });
 
-    // if none of the above states are matched, use this as the fallback
-
-    $urlRouterProvider.otherwise(appUrlMap.home)
-
-
+    // if none of the below states are matched, use this as the fallback
+    $urlRouterProvider.otherwise(appUrlMap.home);
 });
