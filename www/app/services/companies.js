@@ -3,12 +3,12 @@ app.service('CompaniesSrv', function ($http) {
         /**
          * @returns a list of companies, false if error.
          */
-        getCompanies: function() {
+        getCompanies: function () {
             return $http.get(beUrlMap.baseLocal + beUrlMap.companies).then(function (data) {
-                        return data;
-                    }, function () {
-                        return false;
-                    });
+                return data;
+            }, function () {
+                return false;
+            });
         },
 
         /**
@@ -27,8 +27,20 @@ app.service('CompaniesSrv', function ($http) {
          * @param restMenu the company menu rest url.
          * @returns a menu object, false if error.
          */
-        getMenu: function(restMenu) {
+        getMenu: function (restMenu) {
             return $http.get(restMenu).then(function (data) {
+                return data;
+            }, function () {
+                return false;
+            });
+        },
+
+        /**
+         * @param restMenuEntries the menu entries rest url.
+         * @returns a list of menu entries, false if error.
+         */
+        getMenuEntries: function (restMenuEntries) {
+            return $http.get(restMenuEntries).then(function (data) {
                 return data;
             }, function () {
                 return false;
