@@ -10,10 +10,4 @@ app.controller('MenuCtrl', function ($scope, $stateParams, CompaniesSrv, SpringD
             $scope.menuEntries = processedRes._embeddedItems;
         });
     });
-
-    /**
-     * Get a menu entries.
-     * Note: using spring-data-rest plugin to use hateoas resources.
-     */
-
 });
