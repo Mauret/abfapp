@@ -1,9 +1,9 @@
-app.controller('CompanyCtrl', function ($scope, $stateParams, RepositorySrv, SpringDataRestAdapter) {
+app.controller('CheckPointCtrl', function ($scope, $stateParams, RepositorySrv, SpringDataRestAdapter) {
     /**
-     * Get a company.
+     * Get a check point.
      * Note: using spring-data-rest plugin to use hateoas resources.
      */
     SpringDataRestAdapter.process(RepositorySrv.getItem($stateParams.restUrl)).then(function (processedRes) {
-        $scope.company = processedRes;
+        $scope.checkPoint = processedRes;
     });
 });

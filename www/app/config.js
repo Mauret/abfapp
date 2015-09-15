@@ -9,6 +9,11 @@ app.config(function ($stateProvider, $urlRouterProvider, SpringDataRestIntercept
     // Each state's controller can be found in controllers.js
     $stateProvider
 
+        .state('home', {
+            url: appUrlMap.home,
+            templateUrl: 'app/views/home.html'
+        })
+
         .state('companies', {
             url: appUrlMap.companies,
             controller: 'CompaniesCtrl',
@@ -25,7 +30,19 @@ app.config(function ($stateProvider, $urlRouterProvider, SpringDataRestIntercept
             url: appUrlMap.menu,
             controller: 'MenuCtrl',
             templateUrl: 'app/views/menu.html'
-        });
+        })
+
+        .state('checkPoints', {
+            url: appUrlMap.checkPoints,
+            controller: 'CheckPointsCtrl',
+            templateUrl: 'app/views/check-points.html'
+        })
+
+        .state('checkPoint', {
+            url: appUrlMap.checkPoint,
+            controller: 'CheckPointCtrl',
+            templateUrl: 'app/views/check-point.html'
+        })
 
     // if none of the below states are matched, use this as the fallback
     $urlRouterProvider.otherwise(appUrlMap.home);

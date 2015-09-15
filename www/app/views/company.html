@@ -9,7 +9,7 @@
 
             <ion-item ng-if="company.email">E-mail: {{company.email}}</ion-item>
         </ion-list>
-        <button ui-sref="menu({restMenu: company._links.menu.href})"
+        <button ui-sref="menu({restUrl: company._links.menu.href})"
            class="button button-full button-stable ion-ios-book"> Menu</button>
         <p>{{company.description}}</p>
     </ion-content>
