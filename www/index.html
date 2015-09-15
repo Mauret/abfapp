@@ -26,14 +26,20 @@
     <script src="app/app.js"></script>
     <script src="app/config.js"></script>
     <!-- services -->
-    <script src="app/services/companies.js"></script>
+    <script src="app/services/repository.js"></script>
     <!-- controllers -->
     <script src="app/controllers/companies.js"></script>
+    <script src="app/controllers/company.js"></script>
+    <script src="app/controllers/menu.js"></script>
+    <script src="app/controllers/check-points.js"></script>
+    <script src="app/controllers/check-point.js"></script>
 </head>
 <body ng-app="abfapp">
 
-<ion-nav-bar class="bar-stable">
-    <ion-nav-back-button class="button-icon icon ion-ios7-arrow-back"></ion-nav-back-button>
+<ion-nav-bar class="bar-light">
+    <ion-nav-back-button class="button-clear">
+        <i class="ion-arrow-left-c"></i>
+    </ion-nav-back-button>
 </ion-nav-bar>
 <ion-nav-view></ion-nav-view>
 </body>

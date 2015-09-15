@@ -1,10 +1,15 @@
-<ion-view title="Aziende" ng-controller="CompaniesCtrl">
-    <ion-content class="has-header">
+<ion-view>
+    <ion-nav-title>Aziende</ion-nav-title>
+    <ion-content>
         <ion-list>
-            <ion-item class="item-thumbnail-left" collection-repeat="company in companies">
+            <ion-item class="item-thumbnail-left" collection-repeat="company in companies"
+                      ui-sref="company({restUrl: company._links.self.href})">
                 <img src="../img/ionic.png">
+
                 <h2>{{company.name}}</h2>
+
                 <p>{{company.city}}</p>
+
                 <p>{{company.address}}</p>
             </ion-item>
         </ion-list>

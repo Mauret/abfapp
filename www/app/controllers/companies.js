@@ -1,9 +1,9 @@
-app.controller('CompaniesCtrl', function ($scope, CompaniesSrv, SpringDataRestAdapter) {
+app.controller('CompaniesCtrl', function ($scope, RepositorySrv, SpringDataRestAdapter) {
     /**
-     * Get all companies,
+     * Get all companies.
+     * Note: using spring-data-rest plugin to use hateoas resources.
      */
-    var res = CompaniesSrv.getCompanies();
-    SpringDataRestAdapter.process(res).then(function (processedRes) {
+    SpringDataRestAdapter.process(RepositorySrv.getCompanies()).then(function (processedRes) {
         $scope.companies = processedRes._embeddedItems;
     });
 });
