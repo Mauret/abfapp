@@ -27,7 +27,7 @@ app.service('RepositorySrv', function ($http) {
         },
 
         /**
-         * @param restItems the items rest url.
+         * @param restUrl the items rest url.
          * @returns a list of items, false if error.
          */
         getItems: function (restUrl) {
@@ -39,7 +39,7 @@ app.service('RepositorySrv', function ($http) {
         },
 
         /**
-         * @param restItem the item rest url.
+         * @param restUrl the item rest url.
          * @returns a item, false if error.
          */
         getItem: function (restUrl) {
