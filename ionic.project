@@ -1,10 +1,4 @@
 {
   "name": "abfapp",
-  "app_id": "102ef66d",
-  "proxies": [
-    {
-      "path": "/api",
-      "proxyUrl": "http://localhost:8081"
-    }
-  ]
+  "app_id": "102ef66d"
 }

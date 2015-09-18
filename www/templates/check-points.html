@@ -1,9 +1,9 @@
-<ion-view>
-    <ion-nav-title>Punti di ristoro</ion-nav-title>
+<ion-view view-title="Punti di ristoro">
     <ion-content>
+        <h1>Punti di ristoro</h1>
         <ion-list>
             <ion-item collection-repeat="checkPoint in checkPoints"
-                      ui-sref="checkPoint({restUrl: checkPoint._links.self.href})">
+                      ui-sref="app.checkPoint({restUrl: checkPoint._links.self.href})">
                 {{checkPoint.name}}
             </ion-item>
         </ion-list>

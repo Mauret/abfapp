@@ -29,7 +29,7 @@ app.service('GoogleMapsSrv', function ($cordovaGeolocation) {
                 var user = new google.maps.Marker({
                     map: map,
                     position: userPosition,
-                    icon: '../img/user_marker.gif'
+                    icon: 'img/user_marker.gif'
                 });
                 google.maps.event.addListener(marker, 'click', function () {
                     infoWindow.open(map, marker);

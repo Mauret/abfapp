@@ -4,12 +4,6 @@ app.service('RepositorySrv', function ($http) {
          * @returns a list of companies.
          */
         getCompanies: function () {
-            //return $http.get(beUrlMap.baseLocal + beUrlMap.companies).then(function (data) {
-            //    return data;
-            //}, function () {
-            //    return false;
-            //});
-
             return this.getItems(beUrlMap.baseLocal + beUrlMap.companies);
         },
 
@@ -17,12 +11,6 @@ app.service('RepositorySrv', function ($http) {
          * @returns a list of check points.
          */
         getCheckPoints: function () {
-            //return $http.get(beUrlMap.baseLocal + beUrlMap.checkPoints).then(function (data) {
-            //    return data;
-            //}, function () {
-            //    return false;
-            //});
-
             return this.getItems(beUrlMap.baseLocal + beUrlMap.checkPoints);
         },
 

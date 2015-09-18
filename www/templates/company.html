@@ -1,8 +1,8 @@
-<ion-view>
-    <ion-nav-title>{{company.name}}</ion-nav-title>
+<ion-view view-title="Azienda">
     <ion-content>
+        <h1>{{company.name}}</h1>
         <div class="text-center">
-            <img src="../img/ionic.png">
+            <img src="img/ionic.png">
         </div>
         <ion-list>
             <ion-item>Indirizzo: {{company.address}} {{company.zipcode}} {{company.city}}</ion-item>
@@ -17,11 +17,11 @@
             <p>{{company.description}}</p>
         </div>
         <div class="tabs tabs-icon-top">
-            <a class="tab-item" ui-sref="menu({restUrl: company._links.menu.href})">
+            <a class="tab-item" ui-sref="app.menu({restUrl: company._links.menu.href})">
                 <i class="icon ion-ios-book"></i>
                 Menu
             </a>
-            <a class="tab-item" ui-sref="checkPoint({restUrl: company._links.checkPoint.href})">
+            <a class="tab-item" ui-sref="app.checkPoint({restUrl: company._links.checkPoint.href})">
                 <i class="icon ion-location"></i>
                 Punto di ristoro
             </a>
