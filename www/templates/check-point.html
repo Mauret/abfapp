@@ -1,6 +1,20 @@
 <ion-view view-title="Punto di ristoro">
-    <ion-content>
+    <ion-content scroll="false">
         <h1>{{checkPoint.name}}</h1>
-        <div id="g-map" data-tap-disabled="true"></div>
+        <ui-gmap-google-map
+                center="checkPoint.map.center"
+                zoom="checkPoint.map.zoom">
+            <ui-gmap-marker
+                    idKey="checkPoint.marker.idKey"
+                    coords="checkPoint.marker.coords"
+            >
+            </ui-gmap-marker>
+            <ui-gmap-marker
+                    idKey="markerUser.idKey"
+                    coords="markerUser.coords"
+                    options="markerUser.options"
+            >
+            </ui-gmap-marker>
+        </ui-gmap-google-map>
     </ion-content>
 </ion-view>

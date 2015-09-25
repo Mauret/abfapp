@@ -3,7 +3,7 @@
         <h1>Aziende</h1>
         <ion-list>
             <ion-item class="item-thumbnail-left" collection-repeat="company in companies"
-                      ui-sref="app.company({restUrl: company._links.self.href})">
+                      ui-sref="company({restUrl: company._links.self.href})">
                 <img src="img/ionic.png">
 
                 <h2>{{company.name}}</h2>

@@ -12,13 +12,17 @@
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 
+    <script src="lib/others/lodash.js"></script>
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- Other js -->
+    <script src="lib/others/index.js"></script>
     <!-- angularjs modules -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-resource.js"></script>
-    <script src="lib/rest/angular-spring-data-rest.js"></script>
-    <script src="http://maps.google.com/maps/api/js?key=AIzaSyA7RBOA2cqNzSofGdbs_V_nVbOF_q73im4&amp;sensor=true"></script>
-    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="lib/angularjs/angular-spring-data-rest.js"></script>
+    <!--<script src="http://maps.google.com/maps/api/js?key=AIzaSyA7RBOA2cqNzSofGdbs_V_nVbOF_q73im4&amp;sensor=true"></script>-->
+    <script src="lib/cordova/dist/ng-cordova.js"></script>
+    <script src="lib/angularjs/angular-google-maps.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -38,11 +42,9 @@
 </head>
 <body ng-app="abfapp">
 
-<!--<ion-nav-bar class="bar-light">-->
-    <!--<ion-nav-back-button class="button-clear">-->
-        <!--<i class="ion-chevron-left"></i>-->
-    <!--</ion-nav-back-button>-->
-<!--</ion-nav-bar>-->
+<ion-nav-bar class="bar-light">
+    <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
 <ion-nav-view></ion-nav-view>
 </body>
 </html>

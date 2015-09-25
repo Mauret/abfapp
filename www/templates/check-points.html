@@ -3,7 +3,7 @@
         <h1>Punti di ristoro</h1>
         <ion-list>
             <ion-item collection-repeat="checkPoint in checkPoints"
-                      ui-sref="app.checkPoint({restUrl: checkPoint._links.self.href})">
+                      ui-sref="checkPoint({restUrl: checkPoint._links.self.href})">
                 {{checkPoint.name}}
             </ion-item>
         </ion-list>
