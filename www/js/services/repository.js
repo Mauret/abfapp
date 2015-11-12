@@ -4,14 +4,14 @@ app.service('RepositorySrv', function ($http) {
          * @returns a list of companies.
          */
         getCompanies: function () {
-            return this.getItems(beUrlMap.baseLocal + beUrlMap.companies);
+            return this.getItems(beUrlMap.baseRemoteCert + beUrlMap.companies);
         },
 
         /**
          * @returns a list of check points.
          */
         getCheckPoints: function () {
-            return this.getItems(beUrlMap.baseLocal + beUrlMap.checkPoints);
+            return this.getItems(beUrlMap.baseRemoteCert + beUrlMap.checkPoints);
         },
 
         /**

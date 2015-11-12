@@ -10,7 +10,8 @@ var appUrlMap = {
 
 var beUrlMap = {
     baseLocal: 'http://192.168.1.247:8081',
-    baseRemote: '',
+    baseRemoteCert: 'http://52.29.104.136',
+    baseRemoteProd: '',
     companies: '/companies?size=1000', //1000 is the max value available
     checkPoints: '/checkPoints?size=1000' //1000 is the max value available
 };
