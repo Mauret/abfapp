@@ -1,6 +1,5 @@
 <ion-view view-title="Punti di ristoro">
     <ion-content>
-        <h1>Punti di ristoro</h1>
         <ion-list>
             <ion-item collection-repeat="checkPoint in checkPoints"
                       ui-sref="checkPoint({restUrl: checkPoint._links.self.href})">

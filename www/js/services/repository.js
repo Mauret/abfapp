@@ -1,17 +1,22 @@
 app.service('RepositorySrv', function ($http) {
+    var error = {
+        error: true,
+        test: true, // TODO set false in production
+    }
+
     return {
         /**
          * @returns a list of companies.
          */
         getCompanies: function () {
-            return this.getItems(beUrlMap.baseRemoteCert + beUrlMap.companies);
+            return this.getItems(beUrlMap.base + beUrlMap.companies);
         },
 
         /**
          * @returns a list of check points.
          */
         getCheckPoints: function () {
-            return this.getItems(beUrlMap.baseRemoteCert + beUrlMap.checkPoints);
+            return this.getItems(beUrlMap.base + beUrlMap.checkPoints);
         },
 
         /**
@@ -21,8 +26,9 @@ app.service('RepositorySrv', function ($http) {
         getItems: function (restUrl) {
             return $http.get(restUrl).then(function (data) {
                 return data;
-            }, function () {
-                return false;
+            }, function (data) {
+                error.errorType = data.status;
+                return error;
             });
         },
 
@@ -33,8 +39,9 @@ app.service('RepositorySrv', function ($http) {
         getItem: function (restUrl) {
             return $http.get(restUrl).then(function (data) {
                 return data;
-            }, function () {
-                return false;
+            }, function (data) {
+                error.errorType = data.status;
+                return error;
             });
         }
     }

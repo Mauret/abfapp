@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-var app = angular.module('abfapp', ['ionic', 'spring-data-rest', 'ngCordova', 'uiGmapgoogle-maps'])
+var app = angular.module('abfapp', ['ionic', 'spring-data-rest', 'ngCordova', 'ngMap'])
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
@@ -19,7 +19,7 @@ var app = angular.module('abfapp', ['ionic', 'spring-data-rest', 'ngCordova', 'u
         });
     })
 
-    .config(function ($stateProvider, $urlRouterProvider, uiGmapGoogleMapApiProvider) {
+    .config(function ($stateProvider, $urlRouterProvider) {
 
         // Ionic uses AngularUI Router which uses the concept of states
         // Learn more here: https://github.com/angular-ui/ui-router
@@ -27,79 +27,41 @@ var app = angular.module('abfapp', ['ionic', 'spring-data-rest', 'ngCordova', 'u
         // Each state's controller can be found in controllers.js
         $stateProvider
 
-            //.state('app', {
-            //    url: appUrlMap.app,
-            //    abstract: true,
-            //    templateUrl: 'templates/side.html'
-            //})
-
             .state('home', {
                 url: appUrlMap.home,
-                //abstract: true,
-                //views: {
-                //    'menuContent': {
-                        templateUrl: 'templates/home.html'
-                    //}
-                //}
+                templateUrl: 'templates/home.html'
             })
 
             .state('companies', {
                 url: appUrlMap.companies,
-                //views: {
-                //    'menuContent': {
-                        controller: 'CompaniesCtrl',
-                        templateUrl: 'templates/companies.html'
-                //    }
-                //}
+                controller: 'CompaniesCtrl',
+                templateUrl: 'templates/companies.html'
             })
 
             .state('company', {
                 url: appUrlMap.company,
-                //views: {
-                //    'menuContent': {
-                        controller: 'CompanyCtrl',
-                        templateUrl: 'templates/company.html'
-                //    }
-                //}
+                controller: 'CompanyCtrl',
+                templateUrl: 'templates/company.html'
             })
 
-            .state('app.menu', {
+            .state('menu', {
                 url: appUrlMap.menu,
-                //views: {
-                //    'menuContent': {
-                        controller: 'MenuCtrl',
-                        templateUrl: 'templates/menu.html'
-                //    }
-                //}
+                controller: 'MenuCtrl',
+                templateUrl: 'templates/menu.html'
             })
 
             .state('checkPoints', {
                 url: appUrlMap.checkPoints,
-                //views: {
-                //    'menuContent': {
-                        controller: 'CheckPointsCtrl',
-                        templateUrl: 'templates/check-points.html'
-                //    }
-                //}
+                controller: 'CheckPointsCtrl',
+                templateUrl: 'templates/check-points.html'
             })
 
             .state('checkPoint', {
                 url: appUrlMap.checkPoint,
-                //views: {
-                //    'menuContent': {
-                        controller: 'CheckPointCtrl',
-                        templateUrl: 'templates/check-point.html'
-                //    }
-                //}
+                controller: 'CheckPointCtrl',
+                templateUrl: 'templates/check-point.html'
             });
 
         // if none of the below states are matched, use this as the fallback
         $urlRouterProvider.otherwise(appUrlMap.home);
-
-
-        uiGmapGoogleMapApiProvider.configure({
-            //    key: 'your api key',
-            v: '3.20', //defaults to latest 3.X anyhow
-            libraries: 'weather,geometry,visualization'
-        });
     });

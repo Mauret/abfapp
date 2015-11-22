@@ -1,20 +1,10 @@
 <ion-view view-title="Punto di ristoro">
     <ion-content scroll="false">
         <h1>{{checkPoint.name}}</h1>
-        <ui-gmap-google-map
-                center="checkPoint.map.center"
-                zoom="checkPoint.map.zoom">
-            <ui-gmap-marker
-                    idKey="checkPoint.marker.idKey"
-                    coords="checkPoint.marker.coords"
-            >
-            </ui-gmap-marker>
-            <ui-gmap-marker
-                    idKey="markerUser.idKey"
-                    coords="markerUser.coords"
-                    options="markerUser.options"
-            >
-            </ui-gmap-marker>
-        </ui-gmap-google-map>
+        <ng-map
+                center="[{{checkPoint.map.center.latitude}}, {{checkPoint.map.center.longitude}}]"
+                zoom="{{checkPoint.map.zoom}}">
+            <kml-layer url="{{checkPoint.kmlLayer.url}}"></kml-layer>
+        </ng-map>
     </ion-content>
 </ion-view>
