@@ -1,4 +1,4 @@
-app.controller('CheckPointCtrl', function ($scope, $stateParams, RepositorySrv, ErrorSrv, $cordovaGeolocation, SpringDataRestAdapter) {
+app.controller('CheckPointCtrl', function ($scope, $stateParams, RepositorySrv, ErrorSrv, SpringDataRestAdapter) {
     /**
      * Get a check point.
      * Note: using spring-data-rest plugin to use hateoas resources.
@@ -10,7 +10,7 @@ app.controller('CheckPointCtrl', function ($scope, $stateParams, RepositorySrv, 
          */
         if (processedRes.error) {
             if (processedRes.test) {
-
+                $scope.checkPoint = repoTest.checkPoint;
             } else {
                 ErrorSrv.getError(processedRes.errorType);
             }
@@ -22,41 +22,22 @@ app.controller('CheckPointCtrl', function ($scope, $stateParams, RepositorySrv, 
             $scope.checkPoint = processedRes;
             //get check point map
             $scope.checkPoint.map = {
-                center: {
-                    latitude: $scope.checkPoint.latitude,
-                    longitude: $scope.checkPoint.longitude
-                },
-                zoom: 13
+                zoom: props.maps.zoom
             };
             //get check point marker
             $scope.checkPoint.marker = {
-                idKey: 1,
-                coords: {
-                    latitude: $scope.checkPoint.latitude,
-                    longitude: $scope.checkPoint.longitude
-                }
+                animation: props.maps.marker.animation
             };
-            //get user marker
-            var userPosOpt = {timeout: 10000, enableHighAccuracy: false};
-            $cordovaGeolocation.getCurrentPosition(userPosOpt).then(function(position) {
-                // see http://ngcordova.com/docs/plugins/geolocation/ if you want to refresh user
-                // position frequently
-                $scope.markerUser = {
-                    idKey: 2,
-                    coords: {
-                        latitude: position.coords.latitude,
-                        longitude: position.coords.longitude
-                    },
-                    options: {
-                        icon: 'img/user_marker.gif',
-                        animation: google.maps.Animation.DROP
-                    }
-                }
-            });
-            //get kml layer
-            $scope.checkPoint.kmlLayer = {
-                url: "https://drive.google.com/open?id=0B7F4Vcu4eokUc3Z2OEJYUGdpeVE"
-            }
+        }
+        //user geolocation
+        $scope.markerUser = {
+            title: props.geolocation.marker.title,
+            icon: props.geolocation.marker.icon,
+            animation: props.geolocation.marker.animation
+        };
+        //get kml layer
+        $scope.checkPoint.kmlLayer = {
+            url: "https://drive.google.com/open?id=0B7F4Vcu4eokUc3Z2OEJYUGdpeVE"
         }
     });
 });

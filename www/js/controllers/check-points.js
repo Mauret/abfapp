@@ -10,7 +10,7 @@ app.controller('CheckPointsCtrl', function ($scope, RepositorySrv, SpringDataRes
          */
         if (processedRes.error) {
             if (processedRes.test) {
-
+                $scope.checkPoints = repoTest.checkPoints;
             } else {
                 ErrorSrv.getError(processedRes.errorType);
             }

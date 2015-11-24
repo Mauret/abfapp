@@ -2,8 +2,15 @@
     <ion-content scroll="false">
         <h1>{{checkPoint.name}}</h1>
         <ng-map
-                center="[{{checkPoint.map.center.latitude}}, {{checkPoint.map.center.longitude}}]"
+                center="current-location"
                 zoom="{{checkPoint.map.zoom}}">
+            <marker position="[{{checkPoint.latitude}},{{checkPoint.longitude}}]"
+                    title="{{checkPoint.name}}"
+                    animation="{{checkPoint.marker.animation}}"></marker>
+            <marker position="current"
+                    title="{{markerUser.title}}"
+                    icon="{{markerUser.icon}}"
+                    animation="{{markerUser.animation}}"></marker>
             <kml-layer url="{{checkPoint.kmlLayer.url}}"></kml-layer>
         </ng-map>
     </ion-content>
